@@ -9,6 +9,21 @@ function App() {
 
     const [lands, setLands] = useState([]);
     const [buttonIsClicked, toggleButtonIsClicked] = useState(false);
+    const [landToSearch, setLandToSearch] = useState("");
+    const [searchedLand, setSearchedLand] = useState({});
+
+    async function handleSearchClick() {
+        try {
+            const response = await axios.get(`https://restcountries.com/v3.1/name/${landToSearch}?fullText=true`);
+            setLands([]);
+            setSearchedLand(response.data);
+            console.log(searchedLand);
+
+        }
+        catch (error) {
+            console.error(error.message);
+        }
+    }
 
     async function handleClick() {
         try {
@@ -24,8 +39,8 @@ function App() {
 
             setLands(allLands);
 
-        } catch (e) {
-            console.error(e);
+        } catch (error) {
+            console.error(error.message);
         } finally {
             toggleButtonIsClicked(true);
         }
@@ -40,13 +55,27 @@ function App() {
             {!buttonIsClicked ? (
                 <button
                     type={"button"}
-                    className="btn btn-primary"
                     onClick={handleClick}
                 >
                     Klik mij!
                 </button>) : (
                 <div>
                     <h1>World Regions</h1>
+                    <input
+                        type="text"
+                        value={landToSearch}
+                        onChange={(e) => {setLandToSearch(e.target.value)}}
+                        placeholder="Type in a country"
+                    />
+                    <button
+                        type="button"
+                        onClick={handleSearchClick}
+                    >
+                        Search
+                    </button>
+                    <div>
+
+                    </div>
                     <ul>
                         {lands.map((land, index) => (
                             <li key={index}>

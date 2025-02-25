@@ -2,8 +2,6 @@ import './LandTile.css';
 import getColorForRegion from "../../helper/getColorForRegion.js";
 
 function LandTile({name, flag, population, region, subregion}) {
-    console.log(subregion);
-    console.log(`name-in-${getColorForRegion(region, subregion)}`);
     return (
         <div className="land-tile">
             <div className="flag-and-name">
