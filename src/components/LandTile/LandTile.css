@@ -1,0 +1,48 @@
+.land-tile {
+    width: 300px;
+    flex-basis: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.flag-and-name {
+    display: flex;
+    flex-direction: row;
+}
+
+.image-flag-wrapper {
+    width: 50px;
+}
+
+.image-flag {
+    width: 100%;
+}
+
+.name-in-blue {
+    color: rgb(91, 118, 188);
+}
+
+.name-in-green {
+    color: rgb(89, 128, 81);
+}
+
+.name-in-red {
+    color: rgb(194, 87, 94);
+}
+
+.name-in-yellow {
+    color: rgb(249, 212, 88);
+}
+
+.name-in-purple {
+    color: rgb(155, 90, 181);
+}
+
+.name-in-light-green {
+    color: rgb(128, 193, 140);
+}
